@@ -6,7 +6,6 @@ sources:
     database: RFK_DEV
     schema: jaffle_shop
     tables:
-      - name: user_events_v2
       - name: customers
         description: customers data
         columns:
