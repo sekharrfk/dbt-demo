@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: Contains the list of all orders
+    columns:
+      - name: status
+        description: "{{ doc('order_status') }}" 
+        tests:
+          - accepted_values:
+              values: ['returned', 'completed', 'shipped', 'placed', 'return_pending']
+      - name: customer_id
+        description: customer identifier
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id

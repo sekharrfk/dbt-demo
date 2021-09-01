@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: one unique customer per row
+    columns:
+      - name: customer_id
+        description: Primary Key for customers
+        tests:
+          - unique
+          - not_null

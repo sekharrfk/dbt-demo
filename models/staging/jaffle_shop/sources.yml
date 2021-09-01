@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: base_tables
+    description: base tables for all our purposes
+    database: RFK_DEV
+    schema: jaffle_shop
+    tables:
+      - name: user_events_v2
+      - name: customers
+        description: customers data
+        columns:
+          - name: id
+            descfription: unique identifier for a customer
+            tests:
+              - unique
+              - not_null
+      - name: orders
+        description: orders data
+        columns:
+          - name: id
+            description: unique identifier for an order
+            tests:
+              - unique
+              - not_null
+  - name: payment_tables
+    database: RFK_DEV
+    schema: stripe
+    tables:
+      - name: payment
+  - name: events_tables
+    database: RFK_DEV
+    schema: ETL
+    tables:
+      - name: user_events_v2
